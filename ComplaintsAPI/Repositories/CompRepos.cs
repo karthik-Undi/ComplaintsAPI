@@ -53,10 +53,10 @@ namespace ComplaintsAPI.Repositories
             return complaint;
         }
 
-        public async Task<Complaints> UpdateComplaint(Complaints item,int id)
+        public async Task<Complaints> UpdateComplaint(int id)
         {
             Complaints complaint = await _context.Complaints.FindAsync(id);
-            complaint.ComplaintStatus = item.ComplaintStatus;
+            complaint.ComplaintStatus = "Resolved";
             await _context.SaveChangesAsync();
             return complaint;
         }

@@ -95,7 +95,7 @@ namespace ComplaintsAPI.Controllers
         }
 
         [HttpPost("{id}")]
-        public async Task<IActionResult> UpdateComplaint(Complaints item, int id)
+        public async Task<IActionResult> UpdateComplaint(int id)
         {
             _log4net.Info("Update Complaint Was Called !!");
             if (!ModelState.IsValid)
@@ -104,7 +104,7 @@ namespace ComplaintsAPI.Controllers
             }
             try
             {
-                var updateComplaint = await _context.UpdateComplaint(item, id);
+                var updateComplaint = await _context.UpdateComplaint(id);
                 _log4net.Info("Update Complaint By Id " + id + " Was Called !!");
                 return Ok(updateComplaint);
             }

@@ -11,7 +11,7 @@ namespace ComplaintsAPI.Repositories
         IEnumerable<Complaints> GetAllComplaints();
         Complaints GetComplaintById(int id);
         Task<Complaints> PostComplaint(Complaints item);
-        Task<Complaints> UpdateComplaint(Complaints item, int id);
+        Task<Complaints> UpdateComplaint(int id);
         IEnumerable<Complaints> GetComplaintsByResidentId(int id);
     }
 }
